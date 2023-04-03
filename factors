@@ -5,13 +5,10 @@ import sys
 def factorise(num):
     for i in range(2,int(num**0.5)+1):
         if num % i == 0:
-            return i, num // i
-    return None, None
+            return (num // i, i)
+    return (1, num)
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Use: factors <file>")
-        sys.exit(1)
     f_input = sys.argv[1]
     fh = open(f_input, "r")
     for line in fh:
